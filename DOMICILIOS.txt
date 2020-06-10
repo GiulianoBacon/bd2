@@ -1,0 +1,216 @@
+package Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import clases.*;
+
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoClient;
+import com.mongodb.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.bson.Document;
+
+import com.google.gson.*;
+
+import org.bson.Document;
+
+import clases.Domicilio;
+
+public class DomicilioTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+
+		MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
+		
+		MongoDatabase db= mongoClient.getDatabase("farmacia");
+		MongoCollection<Document> col=db.getCollection("persona");
+		
+		MongoCollection<Document> coldomicilio=db.getCollection("domicilio");
+		
+		List<Document> domicilios = new ArrayList<Document>();
+		Domicilio dom=new Domicilio(1,"BSAS","LUIS GUILLON","JUJUY",211);
+		Domicilio dom2=new Domicilio(2,"BSAS","MONTE GRANDE","SALTA",333);
+		Domicilio dom3=new Domicilio(3,"BSAS","TEMPERLEY","MENDOZA",444);
+		Domicilio dom4=new Domicilio(4,"BSAS","TURDERA","SAAVEDRA",555);
+		Domicilio dom5=new Domicilio(5,"BSAS","TEMPERLEY","BOULEVARD",666);
+		Domicilio dom6=new Domicilio(6,"BSAS","LUIS GUILLON","CORREA",777);
+		Domicilio dom7=new Domicilio(7,"BSAS","TEMPERLEY","MADARIAGA",888);
+		Domicilio dom8=new Domicilio(8,"BSAS","TEMPERLEY","ALSINA",999);
+		Domicilio dom9=new Domicilio(9,"BSAS","LUIS GUILLON","GARZON",101);
+		Domicilio dom10=new Domicilio(10,"BSAS","LUIS GUILLON","ALEM",202);
+		Domicilio dom11=new Domicilio(11,"BSAS","LUIS GUILLON","VICENTE LOPEZ",303);
+		Domicilio dom12=new Domicilio(12,"BSAS","TURDERA","DORREGO",404);
+		Domicilio dom13=new Domicilio(13,"BSAS","TEMPERLEY","LEGARRETA",505);
+		Domicilio dom14=new Domicilio(14,"BSAS","LUIS GUILLON","IRIGOYEN",606);
+		Domicilio dom15=new Domicilio(15,"BSAS","MONTE GRANDE","GABASTON",707);
+		Domicilio dom16=new Domicilio(16,"BSAS","LUIS GUILLON","OCANTOS",808);
+		
+		
+		Document domicilio1=new Document();
+		
+		domicilio1.append("idDomicilio", dom.getIdDomicilio())
+		.append("provincia", dom.getProvincia())
+		.append("localidad", dom.getLocalidad())
+		.append("calle", dom.getCalle())
+		.append("numero", dom.getNumero());
+		
+		Document domicilio2=new Document();
+		
+		domicilio1.append("idDomicilio", dom2.getIdDomicilio())
+		.append("provincia", dom2.getProvincia())
+		.append("localidad", dom2.getLocalidad())
+		.append("calle", dom2.getCalle())
+		.append("numero", dom2.getNumero());
+		
+		Document domicilio3=new Document();
+		
+		domicilio1.append("idDomicilio", dom3.getIdDomicilio())
+		.append("provincia", dom3.getProvincia())
+		.append("localidad", dom3.getLocalidad())
+		.append("calle", dom3.getCalle())
+		.append("numero", dom3.getNumero());
+		
+		Document domicilio4=new Document();
+		
+		domicilio1.append("idDomicilio", dom4.getIdDomicilio())
+		.append("provincia", dom4.getProvincia())
+		.append("localidad", dom4.getLocalidad())
+		.append("calle", dom4.getCalle())
+		.append("numero", dom4.getNumero());
+		
+Document domicilio5=new Document();
+		
+		domicilio1.append("idDomicilio", dom5.getIdDomicilio())
+		.append("provincia", dom5.getProvincia())
+		.append("localidad", dom5.getLocalidad())
+		.append("calle", dom5.getCalle())
+		.append("numero", dom5.getNumero());
+		
+Document domicilio6=new Document();
+		
+		domicilio1.append("idDomicilio", dom6.getIdDomicilio())
+		.append("provincia", dom6.getProvincia())
+		.append("localidad", dom6.getLocalidad())
+		.append("calle", dom6.getCalle())
+		.append("numero", dom6.getNumero());
+		
+Document domicilio7=new Document();
+		
+		domicilio1.append("idDomicilio", dom7.getIdDomicilio())
+		.append("provincia", dom7.getProvincia())
+		.append("localidad", dom7.getLocalidad())
+		.append("calle", dom7.getCalle())
+		.append("numero", dom7.getNumero());
+		
+Document domicilio8=new Document();
+		
+		domicilio1.append("idDomicilio", dom8.getIdDomicilio())
+		.append("provincia", dom8.getProvincia())
+		.append("localidad", dom8.getLocalidad())
+		.append("calle", dom8.getCalle())
+		.append("numero", dom8.getNumero());
+		
+Document domicilio9=new Document();
+		
+		domicilio1.append("idDomicilio", dom9.getIdDomicilio())
+		.append("provincia", dom9.getProvincia())
+		.append("localidad", dom9.getLocalidad())
+		.append("calle", dom9.getCalle())
+		.append("numero", dom9.getNumero());
+		
+Document domicilio10=new Document();
+		
+		domicilio1.append("idDomicilio", dom10.getIdDomicilio())
+		.append("provincia", dom10.getProvincia())
+		.append("localidad", dom10.getLocalidad())
+		.append("calle", dom10.getCalle())
+		.append("numero", dom10.getNumero());
+		
+Document domicilio11=new Document();
+		
+		domicilio1.append("idDomicilio", dom11.getIdDomicilio())
+		.append("provincia", dom11.getProvincia())
+		.append("localidad", dom11.getLocalidad())
+		.append("calle", dom11.getCalle())
+		.append("numero", dom11.getNumero());
+		
+Document domicilio12=new Document();
+		
+		domicilio1.append("idDomicilio", dom12.getIdDomicilio())
+		.append("provincia", dom12.getProvincia())
+		.append("localidad", dom12.getLocalidad())
+		.append("calle", dom12.getCalle())
+		.append("numero", dom12.getNumero());
+		
+Document domicilio13=new Document();
+		
+		domicilio1.append("idDomicilio", dom13.getIdDomicilio())
+		.append("provincia", dom13.getProvincia())
+		.append("localidad", dom13.getLocalidad())
+		.append("calle", dom13.getCalle())
+		.append("numero", dom13.getNumero());
+		
+Document domicilio14=new Document();
+		
+		domicilio1.append("idDomicilio", dom14.getIdDomicilio())
+		.append("provincia", dom14.getProvincia())
+		.append("localidad", dom14.getLocalidad())
+		.append("calle", dom14.getCalle())
+		.append("numero", dom14.getNumero());
+		
+Document domicilio15=new Document();
+		
+		domicilio1.append("idDomicilio", dom15.getIdDomicilio())
+		.append("provincia", dom15.getProvincia())
+		.append("localidad", dom15.getLocalidad())
+		.append("calle", dom15.getCalle())
+		.append("numero", dom15.getNumero());
+		
+Document domicilio16=new Document();
+		
+		domicilio1.append("idDomicilio", dom16.getIdDomicilio())
+		.append("provincia", dom16.getProvincia())
+		.append("localidad", dom16.getLocalidad())
+		.append("calle", dom16.getCalle())
+		.append("numero", dom16.getNumero());
+		
+		
+		domicilios.add(domicilio1);
+		domicilios.add(domicilio2);
+		domicilios.add(domicilio3);
+		domicilios.add(domicilio4);
+		domicilios.add(domicilio5);
+		domicilios.add(domicilio6);
+		domicilios.add(domicilio7);
+		domicilios.add(domicilio8);
+		domicilios.add(domicilio9);
+		domicilios.add(domicilio10);
+		domicilios.add(domicilio11);
+		domicilios.add(domicilio12);
+		domicilios.add(domicilio13);
+		domicilios.add(domicilio14);
+		domicilios.add(domicilio15);
+		domicilios.add(domicilio16);
+	
+		
+		
+		
+		
+		coldomicilio.insertMany(domicilios);
+		
+		
+		
+	}
+
+}
