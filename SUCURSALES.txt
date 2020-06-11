@@ -1,0 +1,24 @@
+//---------------------------------------------------------------------------------
+	    // SUCURSALES
+		List<Document> sucursales=new ArrayList<Document>();
+		
+		Document sucursal1=new Document();
+		sucursal1.append("idSucursal", "1")
+		.append("domicilio",dom14)
+		.append("empleados",);
+		
+		Document sucursal2=new Document();
+		sucursal1.append("idSucursal", "2")
+		.append("domicilio",dom15)
+		.append("empleados",);
+		
+		Document sucursal3=new Document();
+		sucursal1.append("idSucursal", "3")
+		.append("domicilio",dom16)
+		.append("empleados",);
+		
+		sucursales.add(sucursal1);
+		sucursales.add(sucursal2);
+		sucursales.add(sucursal3);
+		
+		colsucursal.insertMany(sucursales);
