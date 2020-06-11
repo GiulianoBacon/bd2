@@ -24,15 +24,17 @@ public class insertVentaBorrarDespues {
 		Venta venta = null;
 		Gson gson = new Gson();
 		String idProducto = "idProducto";
+		String idSucursal = "idSucursal";
 		String efectivo = "efectivo";
 		String tarjeta = "tarjeta";
 		
+		MongoCollection<Document> sucursalcol= db.getCollection("sucursal");
 		MongoCollection<Document> prodcol= db.getCollection("producto");
 		
 		List<Producto> productosVenta = new ArrayList<>();
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,1).toJson(), Producto.class));
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,2).toJson(), Producto.class));
-		venta = new Venta(1,new GregorianCalendar(2020,10,15),tarjeta,340.40,empleado1,productosVenta);
+		venta = new Venta(1,new GregorianCalendar(2020,10,15),tarjeta,340.40,empleado1,productosVenta,filtrarCollecionPorId(sucursalcol,idSucursal,1));
 		String json = gson.toJson(venta);
 		Document ventaDocument = Document.parse(json);
 		listaVenta.add(ventaDocument);
@@ -41,7 +43,7 @@ public class insertVentaBorrarDespues {
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,6).toJson(), Producto.class));
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,8).toJson(), Producto.class));
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,3).toJson(), Producto.class));
-		venta = new Venta(2,new GregorianCalendar(2020,10,12),efectivo,450.0,empleado2,productosVenta);
+		venta = new Venta(2,new GregorianCalendar(2020,10,12),efectivo,450.0,empleado2,productosVenta,filtrarCollecionPorId(sucursalcol,idSucursal,2));
 		json = gson.toJson(venta);
 		ventaDocument = Document.parse(json);
 		listaVenta.add(ventaDocument);
@@ -49,7 +51,7 @@ public class insertVentaBorrarDespues {
 		productosVenta = new ArrayList<>();
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,3).toJson(), Producto.class));
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,6).toJson(), Producto.class));
-		venta = new Venta(3,new GregorianCalendar(2020,10,11),tarjeta,2350.0,empleado3,productosVenta);
+		venta = new Venta(3,new GregorianCalendar(2020,10,11),tarjeta,2350.0,empleado3,productosVenta,filtrarCollecionPorId(sucursalcol,idSucursal,3));
 		json = gson.toJson(venta);
 		ventaDocument = Document.parse(json);
 		listaVenta.add(ventaDocument);
@@ -57,7 +59,7 @@ public class insertVentaBorrarDespues {
 		productosVenta = new ArrayList<>();
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,8).toJson(), Producto.class));
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,10).toJson(), Producto.class));
-		venta = new Venta(4,new GregorianCalendar(2020,5,9),tarjeta,15340.0,empleado4,productosVenta);
+		venta = new Venta(4,new GregorianCalendar(2020,5,9),tarjeta,15340.0,empleado4,productosVenta,filtrarCollecionPorId(sucursalcol,idSucursal,2));
 		json = gson.toJson(venta);
 		ventaDocument = Document.parse(json);
 		listaVenta.add(ventaDocument);
@@ -65,7 +67,7 @@ public class insertVentaBorrarDespues {
 		productosVenta = new ArrayList<>();
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,8).toJson(), Producto.class));
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,2).toJson(), Producto.class));
-		venta = new Venta(5,new GregorianCalendar(2020,2,27),tarjeta,1150.0,empleado5,productosVenta);
+		venta = new Venta(5,new GregorianCalendar(2020,2,27),tarjeta,1150.0,empleado5,productosVenta,filtrarCollecionPorId(sucursalcol,idSucursal,1));
 		json = gson.toJson(venta);
 		ventaDocument = Document.parse(json);
 		listaVenta.add(ventaDocument);
@@ -74,7 +76,7 @@ public class insertVentaBorrarDespues {
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,1).toJson(), Producto.class));
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,7).toJson(), Producto.class));
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,9).toJson(), Producto.class));
-		venta = new Venta(6,new GregorianCalendar(2020,1,30),efectivo,170.0,empleado6,productosVenta);
+		venta = new Venta(6,new GregorianCalendar(2020,1,30),efectivo,170.0,empleado6,productosVenta,filtrarCollecionPorId(sucursalcol,idSucursal,3));
 		json = gson.toJson(venta);
 		ventaDocument = Document.parse(json);
 		listaVenta.add(ventaDocument);
@@ -82,14 +84,14 @@ public class insertVentaBorrarDespues {
 		productosVenta = new ArrayList<>();
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,1).toJson(), Producto.class));
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,10).toJson(), Producto.class));
-		venta = new Venta(7,new GregorianCalendar(2019,10,9),tarjeta,150.0,empleado7,productosVenta);
+		venta = new Venta(7,new GregorianCalendar(2019,10,9),tarjeta,150.0,empleado7,productosVenta,filtrarCollecionPorId(sucursalcol,idSucursal,2));
 		json = gson.toJson(venta);
 		ventaDocument = Document.parse(json);
 		listaVenta.add(ventaDocument);
 		
 		productosVenta = new ArrayList<>();
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,1).toJson(), Producto.class));
-		venta = new Venta(8,new GregorianCalendar(2020,11,29),efectivo,444.0,empleado8,productosVenta);
+		venta = new Venta(8,new GregorianCalendar(2020,11,29),efectivo,444.0,empleado8,productosVenta,filtrarCollecionPorId(sucursalcol,idSucursal,3));
 		json = gson.toJson(venta);
 		ventaDocument = Document.parse(json);
 		listaVenta.add(ventaDocument);
@@ -97,7 +99,7 @@ public class insertVentaBorrarDespues {
 		productosVenta = new ArrayList<>();
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,9).toJson(), Producto.class));
 		productosVenta.add(gson.fromJson(filtrarColeccionPorId(prodcol,idProducto,4).toJson(), Producto.class));
-		venta = new Venta(9,new GregorianCalendar(2020,8,10),tarjeta,333.0,empleado9,productosVenta);
+		venta = new Venta(9,new GregorianCalendar(2020,8,10),tarjeta,333.0,empleado9,productosVenta,filtrarCollecionPorId(sucursalcol,idSucursal,1));
 		json = gson.toJson(venta);
 		ventaDocument = Document.parse(json);
 		listaVenta.add(ventaDocument);

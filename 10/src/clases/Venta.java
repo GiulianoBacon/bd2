@@ -12,11 +12,12 @@ public class Venta {
 	private double pagoTotal;
 	private Empleado empleado;
 	private List<Producto> productos;
+	private Sucursal sucursal;
 
 	public Venta() {
 	}
 
-	public Venta(int nroTicket, GregorianCalendar fecha, String formaPago, double pagoTotal, Empleado empleado) {
+	public Venta(int nroTicket, GregorianCalendar fecha, String formaPago, double pagoTotal, Empleado empleado,Sucursal sucursal) {
 		super();
 		this.nroTicket = nroTicket;
 		this.fecha = fecha;
@@ -24,6 +25,7 @@ public class Venta {
 		this.pagoTotal = pagoTotal;
 		this.productos=new ArrayList<Producto>();
 		this.empleado=empleado;
+		this.sucursal = sucursal;
 	}
 
 	public int getNroTicket() {
@@ -56,6 +58,14 @@ public class Venta {
 
 	public void setPagoTotal(double pagoTotal) {
 		this.pagoTotal = pagoTotal;
+	}
+
+	public Sucursal getSucursal() {
+		return sucursal;
+	}
+
+	public void setSucursal(Sucursal sucursal) {
+		this.sucursal = sucursal;
 	}
 
 	
