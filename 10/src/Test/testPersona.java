@@ -26,47 +26,151 @@ public class testPersona {
 		MongoDatabase db = mongoClient.getDatabase("farmacia");
 		MongoCollection<Document> colpersona = db.getCollection("persona");
 		MongoCollection<Document> coldomicilio = db.getCollection("domicilio");
+		MongoCollection<Document> colafiliado = db.getCollection("afiliado");
+		
 		List<Document> personas = new ArrayList<Document>();
 		
 		Document cliente1 = new Document();
-		cliente1.append("dni", 41432889);
+		cliente1.append("dni", 1111111);
 		cliente1.append("apellido", "Bacon");
 		cliente1.append("nombre", "Giuliano");
 		cliente1.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "1"));
+		cliente1.append("idCliente", "1");
+		cliente1.append("nroAfiliado", null);
 		personas.add(cliente1);
 
 		Document cliente2 = new Document();
-		cliente1.append("dni", 41432889);
-		cliente1.append("apellido", "Bacon");
-		cliente1.append("nombre", "Giuliano");
-		cliente1.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "1"));
+		cliente2.append("dni", 2222222);
+		cliente2.append("apellido", "Taliento");
+		cliente2.append("nombre", "Alejo");
+		cliente2.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "2"));
+		cliente2.append("idCliente", "2");
+		cliente2.append("nroAfiliado", null);
 		personas.add(cliente2);
 		
 		Document cliente3 = new Document();
-		cliente1.append("dni", 41432889);
-		cliente1.append("apellido", "Bacon");
-		cliente1.append("nombre", "Giuliano");
-		cliente1.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "1"));
+		cliente3.append("dni", 33333333);
+		cliente3.append("apellido", "Bombara");
+		cliente3.append("nombre", "Martin");
+		cliente3.append("domicilio", null);
+		cliente3.append("idCliente", "3");
+		cliente3.append("nroAfiliado", "null");
 		personas.add(cliente3);
 		
 		Document cliente4 = new Document();
-		cliente1.append("dni", 41432889);
-		cliente1.append("apellido", "Bacon");
-		cliente1.append("nombre", "Giuliano");
-		cliente1.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "1"));
+		cliente4.append("dni", 4444444);
+		cliente4.append("apellido", "Herrera");
+		cliente4.append("nombre", "Julian");
+		cliente4.append("domicilio", null);
+		cliente4.append("idCliente", "4");
+		cliente4.append("nroAfiliado", null);
 		personas.add(cliente4);
+		
+		Document cliente5 = new Document();
+		cliente5.append("dni", 5555555);
+		cliente5.append("apellido", "Olivera");
+		cliente5.append("nombre", "Hernan");
+		cliente5.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "5"));
+		cliente5.append("idCliente", "5");
+		cliente5.append("nroAfiliado", null);
+		personas.add(cliente5);
+		
+		Document cliente6 = new Document();
+		cliente6.append("dni", 6666666);
+		cliente6.append("apellido", "Torres");
+		cliente6.append("nombre", "Luciano");
+		cliente6.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "6"));
+		cliente6.append("idCliente", "6");
+		cliente6.append("nroAfiliado", null);
+		personas.add(cliente6);
+		
+		Document cliente7 = new Document();
+		cliente7.append("dni", 7777777);
+		cliente7.append("apellido", "Peper");
+		cliente7.append("nombre", "Jose");
+		cliente7.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "7"));
+		cliente7.append("idCliente", "7");
+		cliente7.append("nroAfiliado", null);
+		personas.add(cliente7);
+		
+		Document cliente8 = new Document();
+		cliente8.append("dni", 8888888);
+		cliente8.append("apellido", "Tevez");
+		cliente8.append("nombre", "Roberto");
+		cliente8.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "8"));
+		cliente8.append("idCliente", "8");
+		cliente8.append("nroAfiliado", null);
+		personas.add(cliente8);
+	
+		Document cliente9 = new Document();
+		cliente9.append("dni", 9999999);
+		cliente9.append("apellido", "Lopez");
+		cliente9.append("nombre", "Lara");
+		cliente9.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "9"));
+		cliente9.append("idCliente", "9");
+		cliente9.append("nroAfiliado", null);
+		personas.add(cliente9);
+		
+		Document cliente10 = new Document();
+		cliente10.append("dni", 1010101);
+		cliente10.append("apellido", "Rodriguez");
+		cliente10.append("nombre", "Florencia");
+		cliente10.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "10"));
+		cliente10.append("idCliente", "10");
+		cliente10.append("nroAfiliado", null);
+		personas.add(cliente10);
+		
+		Document empleado1 = new Document();
+		empleado1.append("dni", 1212121);
+		empleado1.append("apellido", "Casuso");
+		empleado1.append("nombre", "Stefano");
+		empleado1.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "11"));
+		empleado1.append("idEmpleado", "1");
+		empleado1.append("cuil", "1");
+		empleado1.append("encargado", false);
+		empleado1.append("afiliado", FlitrarColeccionPorId(colafiliado, "nroAfiliado", "1"));
+		personas.add(empleado1);
+		
+		Document empleado2 = new Document();
+		empleado2.append("dni", 1313131);
+		empleado2.append("apellido", "Palacio");
+		empleado2.append("nombre", "Francisco");
+		empleado2.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "12"));
+		empleado2.append("idEmpleado", "1");
+		empleado2.append("cuil", "1");
+		empleado2.append("encargado", false);
+		empleado2.append("afiliado", FlitrarColeccionPorId(colafiliado, "nroAfiliado", "2"));
+		personas.add(empleado2);
+		
+		Document empleado3 = new Document();
+		empleado3.append("dni", 1313131);
+		empleado3.append("apellido", "Montana");
+		empleado3.append("nombre", "Javier");
+		empleado3.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "13"));
+		empleado3.append("idEmpleado", "1");
+		empleado3.append("cuil", "1");
+		empleado3.append("encargado", false);
+		empleado3.append("afiliado", FlitrarColeccionPorId(colafiliado, "nroAfiliado", "3"));
+		personas.add(empleado3);
+		
+		Document empleado4 = new Document();
+		empleado4.append("dni", 1414141);
+		empleado4.append("apellido", "Calvi");
+		empleado4.append("nombre", "Ignacio");
+		empleado4.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "14"));
+		empleado4.append("idEmpleado", "1");
+		empleado4.append("cuil", "1");
+		empleado4.append("encargado", true);
+		empleado4.append("afiliado", FlitrarColeccionPorId(colafiliado, "nroAfiliado", "4"));
+		personas.add(empleado4);
 
 		colpersona.insertMany(personas);
-		
-		String json= new Gson().toJson(personas);
-		System.out.println(json);
 				
-		Persona json2 = new Gson().fromJson(json, Persona.class);
-		System.out.println(json.toString());
+		System.out.print(personas.toString());
 	}
 
 	private static Document FlitrarColeccionPorId(MongoCollection<Document> coleccion,String filtro, String num) {
-		Bson bsonFilter = Filters.eq("filtro", "num");
+		Bson bsonFilter = Filters.eq(filtro, num);
 		Document documento = coleccion.find(bsonFilter).first();
 		return documento;
 	}
