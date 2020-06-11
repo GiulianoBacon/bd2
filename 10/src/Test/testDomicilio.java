@@ -1,7 +1,5 @@
 package Test;
 
-import clases.*;
-
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -18,8 +16,9 @@ public class testDomicilio {
 		// TODO Auto-generated method stub
 
 		MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
-		
+
 		MongoDatabase db = mongoClient.getDatabase("farmacia");
+
 		MongoCollection<Document> coldomicilio = db.getCollection("domicilio");
 		List<Document> domicilios = new ArrayList<Document>();
 		
@@ -81,7 +80,7 @@ public class testDomicilio {
 
 		
 		Document domicilio8 = new Document();
-		domicilio8.append("idDomicilio", 7);
+		domicilio8.append("idDomicilio", 8);
 		domicilio8.append("provincia", "BSAS");
 		domicilio8.append("localidad", "TEMPERLEY");
 		domicilio8.append("calle", "ESPERANZA");
@@ -89,7 +88,7 @@ public class testDomicilio {
 		domicilios.add(domicilio8);
 		  
 		Document domicilio9 = new Document();
-		domicilio9.append("idDomicilio", 7);
+		domicilio9.append("idDomicilio", 9);
 		domicilio9.append("provincia", "BSAS");
 		domicilio9.append("localidad", "LOMAS");
 		domicilio9.append("calle", "LAPRIDA");
@@ -97,7 +96,7 @@ public class testDomicilio {
 		domicilios.add(domicilio9);
 		  
 		Document domicilio10 = new Document();
-		domicilio10.append("idDomicilio", 7);
+		domicilio10.append("idDomicilio", 10);
 		domicilio10.append("provincia", "BSAS");
 		domicilio10.append("localidad", "LOMAS");
 		domicilio10.append("calle", "COLOMBRES");
@@ -105,7 +104,7 @@ public class testDomicilio {
 		domicilios.add(domicilio10);
 		
 		Document domicilio11 = new Document();
-		domicilio11.append("idDomicilio", 7);
+		domicilio11.append("idDomicilio", 11);
 		domicilio11.append("provincia", "BSAS");
 		domicilio11.append("localidad", "TEMPERLEY");
 		domicilio11.append("calle", "MEEKS");
@@ -113,7 +112,7 @@ public class testDomicilio {
 		domicilios.add(domicilio11);
 		  
 		Document domicilio12 = new Document();
-		domicilio12.append("idDomicilio", 7);
+		domicilio12.append("idDomicilio", 12);
 		domicilio12.append("provincia", "BSAS");
 		domicilio12.append("localidad", "LONGCHAMPS");
 		domicilio12.append("calle", "HIPOLITO YRIGOYEN");
@@ -121,7 +120,7 @@ public class testDomicilio {
 		domicilios.add(domicilio12);
 		  
 		Document domicilio13 = new Document();
-		domicilio13.append("idDomicilio", 7);
+		domicilio13.append("idDomicilio", 13);
 		domicilio13.append("provincia", "BSAS");
 		domicilio13.append("localidad", "BURZACO");
 		domicilio13.append("calle", "S.DOMINGO");
@@ -129,7 +128,7 @@ public class testDomicilio {
 		domicilios.add(domicilio13);
 		  
 		Document domicilio14 = new Document();
-		domicilio14.append("idDomicilio", 7);
+		domicilio14.append("idDomicilio", 14);
 		domicilio14.append("provincia", "BSAS");
 		domicilio14.append("localidad", "ADROGUE");
 		domicilio14.append("calle", "MITRE");
@@ -137,7 +136,7 @@ public class testDomicilio {
 		domicilios.add(domicilio14);
 		  
 		Document domicilio15 = new Document();
-		domicilio15.append("idDomicilio", 7);
+		domicilio15.append("idDomicilio", 15);
 		domicilio15.append("provincia", "BSAS");
 		domicilio15.append("localidad", "ADROGUE");
 		domicilio15.append("calle", "ESPORA");
@@ -145,7 +144,7 @@ public class testDomicilio {
 		domicilios.add(domicilio15);
 		  
 		Document domicilio16 = new Document();
-		domicilio16.append("idDomicilio", 7);
+		domicilio16.append("idDomicilio", 16);
 		domicilio16.append("provincia", "BSAS");
 		domicilio16.append("localidad", "ADROGUE");
 		domicilio16.append("calle", "P.BROWN");
