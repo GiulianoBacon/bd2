@@ -1,44 +1,4 @@
-package Test;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import clases.*;
-
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoClient;
-import com.mongodb.*;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import org.bson.Document;
-
-import com.google.gson.*;
-
-import org.bson.Document;
-
-import clases.Domicilio;
-
-public class DomicilioTest {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-
-		MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
-		
-		MongoDatabase db= mongoClient.getDatabase("farmacia");
-		MongoCollection<Document> col=db.getCollection("persona");
-		
-		MongoCollection<Document> coldomicilio=db.getCollection("domicilio");
-		
-		List<Document> domicilios = new ArrayList<Document>();
+List<Document> domicilios = new ArrayList<Document>();
 		Domicilio dom=new Domicilio(1,"BSAS","LUIS GUILLON","JUJUY",211);
 		Domicilio dom2=new Domicilio(2,"BSAS","MONTE GRANDE","SALTA",333);
 		Domicilio dom3=new Domicilio(3,"BSAS","TEMPERLEY","MENDOZA",444);
@@ -65,9 +25,11 @@ public class DomicilioTest {
 		.append("calle", dom.getCalle())
 		.append("numero", dom.getNumero());
 		
+
+		
 		Document domicilio2=new Document();
 		
-		domicilio1.append("idDomicilio", dom2.getIdDomicilio())
+		domicilio2.append("idDomicilio", dom2.getIdDomicilio())
 		.append("provincia", dom2.getProvincia())
 		.append("localidad", dom2.getLocalidad())
 		.append("calle", dom2.getCalle())
@@ -75,7 +37,7 @@ public class DomicilioTest {
 		
 		Document domicilio3=new Document();
 		
-		domicilio1.append("idDomicilio", dom3.getIdDomicilio())
+		domicilio3.append("idDomicilio", dom3.getIdDomicilio())
 		.append("provincia", dom3.getProvincia())
 		.append("localidad", dom3.getLocalidad())
 		.append("calle", dom3.getCalle())
@@ -83,7 +45,7 @@ public class DomicilioTest {
 		
 		Document domicilio4=new Document();
 		
-		domicilio1.append("idDomicilio", dom4.getIdDomicilio())
+		domicilio4.append("idDomicilio", dom4.getIdDomicilio())
 		.append("provincia", dom4.getProvincia())
 		.append("localidad", dom4.getLocalidad())
 		.append("calle", dom4.getCalle())
@@ -91,7 +53,7 @@ public class DomicilioTest {
 		
 Document domicilio5=new Document();
 		
-		domicilio1.append("idDomicilio", dom5.getIdDomicilio())
+		domicilio5.append("idDomicilio", dom5.getIdDomicilio())
 		.append("provincia", dom5.getProvincia())
 		.append("localidad", dom5.getLocalidad())
 		.append("calle", dom5.getCalle())
@@ -99,7 +61,7 @@ Document domicilio5=new Document();
 		
 Document domicilio6=new Document();
 		
-		domicilio1.append("idDomicilio", dom6.getIdDomicilio())
+		domicilio6.append("idDomicilio", dom6.getIdDomicilio())
 		.append("provincia", dom6.getProvincia())
 		.append("localidad", dom6.getLocalidad())
 		.append("calle", dom6.getCalle())
@@ -107,7 +69,7 @@ Document domicilio6=new Document();
 		
 Document domicilio7=new Document();
 		
-		domicilio1.append("idDomicilio", dom7.getIdDomicilio())
+		domicilio7.append("idDomicilio", dom7.getIdDomicilio())
 		.append("provincia", dom7.getProvincia())
 		.append("localidad", dom7.getLocalidad())
 		.append("calle", dom7.getCalle())
@@ -115,7 +77,7 @@ Document domicilio7=new Document();
 		
 Document domicilio8=new Document();
 		
-		domicilio1.append("idDomicilio", dom8.getIdDomicilio())
+		domicilio8.append("idDomicilio", dom8.getIdDomicilio())
 		.append("provincia", dom8.getProvincia())
 		.append("localidad", dom8.getLocalidad())
 		.append("calle", dom8.getCalle())
@@ -123,7 +85,7 @@ Document domicilio8=new Document();
 		
 Document domicilio9=new Document();
 		
-		domicilio1.append("idDomicilio", dom9.getIdDomicilio())
+		domicilio9.append("idDomicilio", dom9.getIdDomicilio())
 		.append("provincia", dom9.getProvincia())
 		.append("localidad", dom9.getLocalidad())
 		.append("calle", dom9.getCalle())
@@ -131,7 +93,7 @@ Document domicilio9=new Document();
 		
 Document domicilio10=new Document();
 		
-		domicilio1.append("idDomicilio", dom10.getIdDomicilio())
+		domicilio10.append("idDomicilio", dom10.getIdDomicilio())
 		.append("provincia", dom10.getProvincia())
 		.append("localidad", dom10.getLocalidad())
 		.append("calle", dom10.getCalle())
@@ -139,7 +101,7 @@ Document domicilio10=new Document();
 		
 Document domicilio11=new Document();
 		
-		domicilio1.append("idDomicilio", dom11.getIdDomicilio())
+		domicilio11.append("idDomicilio", dom11.getIdDomicilio())
 		.append("provincia", dom11.getProvincia())
 		.append("localidad", dom11.getLocalidad())
 		.append("calle", dom11.getCalle())
@@ -147,7 +109,7 @@ Document domicilio11=new Document();
 		
 Document domicilio12=new Document();
 		
-		domicilio1.append("idDomicilio", dom12.getIdDomicilio())
+		domicilio12.append("idDomicilio", dom12.getIdDomicilio())
 		.append("provincia", dom12.getProvincia())
 		.append("localidad", dom12.getLocalidad())
 		.append("calle", dom12.getCalle())
@@ -155,7 +117,7 @@ Document domicilio12=new Document();
 		
 Document domicilio13=new Document();
 		
-		domicilio1.append("idDomicilio", dom13.getIdDomicilio())
+		domicilio13.append("idDomicilio", dom13.getIdDomicilio())
 		.append("provincia", dom13.getProvincia())
 		.append("localidad", dom13.getLocalidad())
 		.append("calle", dom13.getCalle())
@@ -163,7 +125,7 @@ Document domicilio13=new Document();
 		
 Document domicilio14=new Document();
 		
-		domicilio1.append("idDomicilio", dom14.getIdDomicilio())
+		domicilio14.append("idDomicilio", dom14.getIdDomicilio())
 		.append("provincia", dom14.getProvincia())
 		.append("localidad", dom14.getLocalidad())
 		.append("calle", dom14.getCalle())
@@ -171,7 +133,7 @@ Document domicilio14=new Document();
 		
 Document domicilio15=new Document();
 		
-		domicilio1.append("idDomicilio", dom15.getIdDomicilio())
+		domicilio15.append("idDomicilio", dom15.getIdDomicilio())
 		.append("provincia", dom15.getProvincia())
 		.append("localidad", dom15.getLocalidad())
 		.append("calle", dom15.getCalle())
@@ -179,12 +141,13 @@ Document domicilio15=new Document();
 		
 Document domicilio16=new Document();
 		
-		domicilio1.append("idDomicilio", dom16.getIdDomicilio())
+		domicilio16.append("idDomicilio", dom16.getIdDomicilio())
 		.append("provincia", dom16.getProvincia())
 		.append("localidad", dom16.getLocalidad())
 		.append("calle", dom16.getCalle())
 		.append("numero", dom16.getNumero());
 		
+
 		
 		domicilios.add(domicilio1);
 		domicilios.add(domicilio2);
@@ -202,15 +165,10 @@ Document domicilio16=new Document();
 		domicilios.add(domicilio14);
 		domicilios.add(domicilio15);
 		domicilios.add(domicilio16);
+		
 	
 		
 		
 		
 		
 		coldomicilio.insertMany(domicilios);
-		
-		
-		
-	}
-
-}
