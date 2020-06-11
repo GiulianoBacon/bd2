@@ -52,7 +52,7 @@ public class testPersona {
 		cliente3.append("dni", 33333333);
 		cliente3.append("apellido", "Bombara");
 		cliente3.append("nombre", "Martin");
-		cliente3.append("domicilio", null);
+		cliente3.append("domicilio",FlitrarColeccionPorId(coldomicilio, "idDomicilio", "3"));
 		cliente3.append("idCliente", "3");
 		cliente3.append("nroAfiliado", "null");
 		personas.add(cliente3);
@@ -61,7 +61,7 @@ public class testPersona {
 		cliente4.append("dni", 4444444);
 		cliente4.append("apellido", "Herrera");
 		cliente4.append("nombre", "Julian");
-		cliente4.append("domicilio", null);
+		cliente4.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "4"));
 		cliente4.append("idCliente", "4");
 		cliente4.append("nroAfiliado", null);
 		personas.add(cliente4);
@@ -163,6 +163,61 @@ public class testPersona {
 		empleado4.append("encargado", true);
 		empleado4.append("afiliado", FlitrarColeccionPorId(colafiliado, "nroAfiliado", "4"));
 		personas.add(empleado4);
+		
+		Document empleado5 = new Document();
+		empleado5.append("dni", 1515151);
+		empleado5.append("apellido", "Bordes");
+		empleado5.append("nombre", "Juan");
+		empleado5.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "15"));
+		empleado5.append("idEmpleado", "1");
+		empleado5.append("cuil", "1");
+		empleado5.append("encargado", true);
+		empleado5.append("afiliado", FlitrarColeccionPorId(colafiliado, "nroAfiliado", "5"));
+		personas.add(empleado5);
+		
+		Document empleado6 = new Document();
+		empleado6.append("dni", 1616161);
+		empleado6.append("apellido", "Copula");
+		empleado6.append("nombre", "Antonio");
+		empleado6.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "16"));
+		empleado6.append("idEmpleado", "1");
+		empleado6.append("cuil", "1");
+		empleado6.append("encargado", true);
+		empleado6.append("afiliado", FlitrarColeccionPorId(colafiliado, "nroAfiliado", "6"));
+		personas.add(empleado6);
+		
+		Document empleado7 = new Document();
+		empleado4.append("dni", 1717171);
+		empleado4.append("apellido", "Diez");
+		empleado4.append("nombre", "Lautaro");
+		empleado4.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "1"));
+		empleado4.append("idEmpleado", "1");
+		empleado4.append("cuil", "1");
+		empleado4.append("encargado", true);
+		empleado4.append("afiliado", FlitrarColeccionPorId(colafiliado, "nroAfiliado", "7"));
+		personas.add(empleado7);
+		
+		Document empleado8 = new Document();
+		empleado8.append("dni", 1818181);
+		empleado8.append("apellido", "Yuyo");
+		empleado8.append("nombre", "Martin");
+		empleado8.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "2"));
+		empleado8.append("idEmpleado", "1");
+		empleado8.append("cuil", "1");
+		empleado8.append("encargado", true);
+		empleado8.append("afiliado", FlitrarColeccionPorId(colafiliado, "nroAfiliado", "8"));
+		personas.add(empleado8);
+		
+		Document empleado9 = new Document();
+		empleado9.append("dni", 1919191);
+		empleado9.append("apellido", "Herrera");
+		empleado9.append("nombre", "Romina");
+		empleado9.append("domicilio", FlitrarColeccionPorId(coldomicilio, "idDomicilio", "4"));
+		empleado9.append("idEmpleado", "1");
+		empleado9.append("cuil", "1");
+		empleado9.append("encargado", true);
+		empleado9.append("afiliado", FlitrarColeccionPorId(colafiliado, "nroAfiliado", "9"));
+		personas.add(empleado9);
 
 		colpersona.insertMany(personas);
 				
