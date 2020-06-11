@@ -9,7 +9,7 @@ import clases.Producto;
 
 import com.google.gson.Gson;
 
-public class insertProductosBorrarDespues {
+public class testProducto {
 
 	public static void main(String[] args) {
 		
