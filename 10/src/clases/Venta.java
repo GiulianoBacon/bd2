@@ -1,5 +1,6 @@
 package clases;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 public class Venta {
 
 	private int nroTicket;
-	private GregorianCalendar fecha;
+	private Date fecha;
 	private String formaPago;
 	private double pagoTotal;
 	private Empleado empleado;
@@ -17,7 +18,7 @@ public class Venta {
 	public Venta() {
 	}
 
-	public Venta(int nroTicket, GregorianCalendar fecha, String formaPago, double pagoTotal, Empleado empleado,List<Producto> productos,Sucursal sucursal) {
+	public Venta(int nroTicket, Date fecha, String formaPago, double pagoTotal, Empleado empleado,List<Producto> productos,Sucursal sucursal) {
 		super();
 		this.nroTicket = nroTicket;
 		this.fecha = fecha;
@@ -36,11 +37,11 @@ public class Venta {
 		this.nroTicket = nroTicket;
 	}
 
-	public GregorianCalendar getFecha() {
+	public Date getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(GregorianCalendar fecha) {
+	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 
