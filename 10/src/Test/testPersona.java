@@ -55,7 +55,7 @@ public class testPersona {
 		cliente3.append("nombre", "Martin");
 		cliente3.append("domicilio",FlitrarColeccionPorId(coldomicilio, "idDomicilio", 3));
 		cliente3.append("idCliente", 3);
-		cliente3.append("nroAfiliado", "null");
+		cliente3.append("nroAfiliado", null);
 		personas.add(cliente3);
 		
 		Document cliente4 = new Document();

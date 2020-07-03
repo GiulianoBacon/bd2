@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"farmacia.afiliado"}],"uuid":"155969cf72574984973ab33f9dc14f55"}

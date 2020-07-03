@@ -1,0 +1,14 @@
+FECHA DATE: db.venta.update({"_id": ObjectId("5efbc33806591436f5edc816")},{$set : {"fechaDate": new Date("2020-08-10")}})
+ db.venta.find({"fechaDate": {   '$gte': ISODate("2020-03-22"),   '$lt': ISODate("2020-10-12")   }  });
+
+PUNTO 1 db.venta.find({"sucursal.idSucursal":1,"fechaDate": {   '$gte': ISODate("2020-03-22"),   '$lt': ISODate("2020-10-12") }}).pretty()
+PUNTO 2 PUNTO 1 db.venta.find({"sucursal.idSucursal":1,"obraSocial.""fechaDate": {   '$gte': ISODate("2020-03-22"),   '$lt': ISODate("2020-10-12") }}).pretty()
+
+
+PUNTO 3 db.venta.find({"sucursal.idSucursal":1,"fechaDate": {   '$gte': ISODate("2020-03-22"),   '$lt': ISODate("2020-10-12") }, "formaPago":"tarjeta",}).pretty()
+
+db.venta.aggregate{[{$match: [$or: [{sucursal.idSucursal:1},{formaPago:'tarjeta'},]}}{$group:{id_:'$sucursal.idSucursal',total:{$sum:'$pagoTotal}}}]}
+
+COBRANZAS PUNTO 3
+db.venta.aggregate([    { $match: { formaPago: "tarjeta" } },{ $group: { _id: "$formaPago", total: { $sum: "$pagoTotal" } } } ])
+db.venta.aggregate([    { $match:  { "sucursal.idSucursal": 1 },{ $group: { _id: "$formaPago", total: { $sum: "$pagoTotal" } } } ])

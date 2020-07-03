@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"farmacia.obrasocial"}],"uuid":"49556dca34224696bb55e2888f012cba"}
